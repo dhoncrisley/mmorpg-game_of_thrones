@@ -12,6 +12,7 @@
     "@types/node": "^10.12.1",
     "body-parser": "^1.18.3",
     "consign": "^0.1.2",
+    "crypto": "^1.0.1",
     "ejs": "^2.5.2",
     "express": "^4.16.4",
     "express-session": "^1.15.6",

@@ -15,7 +15,14 @@
 
 	<!-- incluindo css -->
 	<link href="css/style.css" rel="stylesheet">
+	<script>
+		$(document).ready(function(){
+			$('#btn_cadastro').click(function(){
+				window.location.href = '/cadastro';
+			});
 
+		})
+		</script>
 </head>
 
 <body class="body-index">
@@ -28,7 +35,7 @@
 					 autocomplete="off" />
 					<input type="password" name="senha" id="senha" placeholder="Senha" class="form-control" />
 					<button type="submit" class="btn btn-success">Entrar</button>
-					<button type="button" class="btn btn-info">Cadastro</button>
+					<button type="button" class="btn btn-info" id="btn_cadastro">Cadastro</button>
 				</div>
 			</form>
 		</div>
@@ -36,7 +43,18 @@
 	</nav>
 
 	<div class="container">
-
+		<% if (validacao.length > 0){ %>
+		<div class="alert alert-danger">
+			<strong>Atenção!</strong>
+			<ul>
+				<% for (var i= 0; i < validacao.length; i++){%>
+				<li>
+					<%= validacao[i].msg %>
+				</li>
+				<%}%>
+			</ul>
+		</div>
+		<% }%>
 		<div class="row">
 			<div class="col-md-2"></div>
 

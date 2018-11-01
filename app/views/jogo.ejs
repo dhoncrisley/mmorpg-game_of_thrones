@@ -72,24 +72,38 @@
 	</nav>
 
 	<div class="container">
+		<%if(msg !== undefined){%>
 		<% if(msg == 'A'){%>
-			<div class="alert alert-danger" id="msg">
-				<strong>Atenção!</strong>
-				Operação inválida, verifique se todos os campos foram informados.
-				</div>
+		<div class="alert alert-danger" id="msg">
+			<strong>Atenção!</strong>
+			Operação inválida, verifique se todos os campos foram informados.
+		</div>
 		<% } %>
 		<% if(msg == 'B'){%>
-			<div class="alert alert-info" id="msg">
-				<strong>Ação realizada com sucesso!</strong>
+		<div class="alert alert-info" id="msg">
+			<strong>Ação realizada com sucesso!</strong>
 
-				</div>
+		</div>
 		<% } %>
 		<% if(msg == 'C'){%>
-			<div class="alert alert-info" id="msg">
-				<strong>Senhor, a atividade ordenada foi finalizada!</strong>
+		<div class="alert alert-info" id="msg">
+			<strong>Senhor, a atividade ordenada foi finalizada!</strong>
 
-				</div>
+		</div>
 		<% } %>
+		<% if(msg == 'D'){%>
+		<div class="alert alert-info" id="msg">
+			<strong>Senhor, sua ordem foi revogada!</strong>
+
+		</div>
+		<% } %>
+		<% if(msg == 'D'){%>
+		<div class="alert alert-info" id="msg">
+			<strong>Senhor, seja bem vindo!</strong>
+
+		</div>
+		<% } %>
+		<%}%>
 		<div class="row">
 			<div class="col-sm-3 casa">
 				<img src="images/casa_<%=img_casa%>.jpg" />

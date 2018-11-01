@@ -1,7 +1,10 @@
 module.exports.jogo = function (application, req, res) {
 
     if (req.session.autorizado !== true) {
-        res.send('Faça login na sessão!');
+        res.render('index', {
+            validacao: {},
+            dadosForm: {}
+        })
         return;
 
     }
@@ -73,5 +76,23 @@ module.exports.ordenar_acao_suditos = function (application, req, res) {
     dadosForm.usuario = req.session.usuario;
     jogoDao.acao(dadosForm);
     res.redirect('jogo?msg=B');
+
+}
+module.exports.revogar_acao = function (application, req, res) {
+    if (req.session.autorizado !== true) {
+        res.send('Faça login na sessão!');
+        return;
+
+    }
+    var url_query = req.query;
+    //console.log(url_query);
+
+    var connection = application.config.dbConnection;
+    var jogoDao = new application.app.models.JogoDAO(connection);
+
+    var _id = url_query.id_acao;
+    jogoDao.revogarAcao(_id, res);
+    
+    
 
 }

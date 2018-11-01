@@ -12,6 +12,7 @@ module.exports.autenticar = function (application, req, res) {
     var erros = req.validationErrors();
 
     if (erros) {
+        console.log(erros)
         res.render('index', {
             validacao: erros,
             dadosForm: dadosForm
