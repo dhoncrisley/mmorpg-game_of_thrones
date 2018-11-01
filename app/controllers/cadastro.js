@@ -28,5 +28,5 @@ module.exports.cadastrar = function (application, req, res) {
 	jogoDao.gerarParametros(dadosForm.usuario);
 
 
-	res.render('jogo', {msg: 'E'});
+	res.send('Bem vindo! Clique <a href="/jogo">Aqui</a> para iniciar');
 }
